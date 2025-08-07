@@ -13,28 +13,37 @@ struct ContentView: View {
         NavigationStack {
             
             VStack {
-            Text("This is the root view 🌳")
-            
-            NavigationLink(destination:
-                SecondView()){//destination shows what will be on the new view
-                Text("Click me!")//label content shows to the user the link
+                Text("This is the root view 🌳")
                 
-                
+                NavigationLink(destination:
+                                SecondView()){//destination shows what will be on the new view
+                    Text("|  Home |")//label content shows to the user the link
                     
-                    NavigationLink(destination: Text("Choose again! (Go back)")) {
-                        Text("No Click me!")
+                    
+                    
+                    NavigationLink(destination:
+                                    ThirdView()){
+                        Text("About  |")
                         
-                    }
-                } //End of vstack
-                
-                .navigationTitle("Home 🏡")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarHidden(true)
-                } //End of navigation stack
+                        
+                        NavigationLink(destination: FourthView()) {
+                            Text("Contact  |")
+                            
+                            NavigationLink(destination: FifthView()) {
+                                Text("Help  |")
+                            }
+                        } //End of vstack
+                        
+                        .navigationTitle("Home 🏡")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
+                    } //End of navigation stack
+                }
             }
+            
         }
-        
-        }
+    }
+    }
 #Preview {
     ContentView()
 }
